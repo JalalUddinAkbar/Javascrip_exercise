@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fun API</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div  class="mx-auto" >
+    <h2>Here is the task: </h2>
+    <h1 id ="task"></h1>
+    <br><br>
+
+    <h3>TO LEARN</h3>
+    <button class="btn btn-success">CLICK ME</button>
+</div>
+
+<script>
+
+    function doSomething(){
+        fetch('http://www.boredapi.com/api/activity/')
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById('task').innerText = data.activity;
+    })
+    }
+    doSomething()
+
+    setInterval(() => {
+        doSomething();
+    }, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1>API(Application Programming Interface)</h1>
+    <h1>JSON(Javascript Object Notation)</h1>
+    <input id="title" type="text", placeholder="Title">
+    <br>
+    <input id="body" type="text", placeholder="What's on your mind?">
+    <br>
+    <button id="submit"> Submit </button>
+    
+    <script>
+       document.getElementById('submit').addEventListener('click', function(){
+           const title = document.getElementById('title').value;
+           const body = document.getElementById('body').value;
+           const postContent = {title: title, body : body};
+           postToServer(postContent);
+       })
+
+            function postToServer(postInfo){
+                fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify(postInfo),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+                    },
+                })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+
+            }
+
+
+    </script>
+</body>
+</html>

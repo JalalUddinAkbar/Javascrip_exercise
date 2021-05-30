@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box-outer{
+        width: 200px;
+        height: 200px;
+        border: 10px solid red;
+        background-color:springgreen;
+        transform: rotate(30deg);
+        transition: background-color 1s ease 1s;
+    }
+    .box-outer:hover{
+        background-color: firebrick;
+    }
+    .box-inner{
+        width: 150px;
+        height:150px;
+        background-color: tomato;
+    }
+</style>
+<body>
+    <div class="box-outer">
+        <box-inner>box 1</box-inner>
+    </div>
+    <div class="box-outer">
+        <box-inner>box 2</box-inner>
+    </div>
+    <div class="box-outer">
+        <box-inner>box 3</box-inner>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>append</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<style>
+    
+</style>
+<body>
+    <div class="container mt-5 ">
+        <div class="d-inline p-2 bg-primary text-white display-4 " >
+            Hey ! I am Jalal Uddin Akbar
+        </div>
+        <br> <br> <br>
+        <button id="btn" class="btn btn-danger text-white">Click Me</button>
+        <br><br><br><br>
+        <div id="box">
+
+        </div>
+        <br><br><br>
+        <div id="element">
+
+        </div>
+    </div>
+    
+    
+
+    
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+            const box = document.getElementById('box');
+            box.innerHTML = `
+            <p class = "d-inline p-2 bg-primary text-white display-4 "> Hey ! This is a New Div </p>
+            `
+            const newBox = document.createElement('p');
+            newBox.className = 'd-inline p-2 text-black display-4';
+            newBox.innerText = 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor doloribus voluptatibus incidunt officiis exercitationem vitae sint aliquid culpa, rerum perspiciatis odit doloremque, quos nam molestiae! Ea debitis laboriosam aperiam similique nostrum? Accusamus eveniet temporibus ab dolor ipsa repellendus enim accusantium atque pariatur, similique architecto quia laborum. Blanditiis iste eius commodi.'
+
+            const element = document.getElementById('element');
+
+            element.appendChild(newBox);
+        })
+    </script>
+</body>
+</html>
